@@ -3,7 +3,7 @@
 import os
 import re
 
-base_dir = "C:/Users/Ilsu/Desktop/School/Thesis/Project/corpora/bbc"  
+base_dir = ""  
 section_folders = [os.path.join(base_dir, folder) for folder in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, folder))]
 
 sampled_articles = []
@@ -38,4 +38,5 @@ with open(text_path, "r", encoding="utf-8") as f:
         text = f.read()
 
 print(len(text.split()))
+
 
