@@ -1,13 +1,11 @@
-#%%
 import spacy
 import pandas as pd
 import requests
 import time
 from collections import Counter
 
-#%%
-text_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/merged_articles_tech.txt"
-API_KEY="6852cfd827f9d5de88a7676a"
+text_path = ""
+API_KEY=""
 quote_verbs = [
         "acknowledged", "added", "addressed", "admitted", "announced", "argued",
         "believed", "claimed", "concluded", "confirmed", "continued", "declared",
@@ -22,7 +20,6 @@ quote_verbs = [
     ]
 nlp = spacy.load("en_core_web_sm")
 
-#%%
 def extract_quoted_names(text_path, quote_verbs):
     with open(text_path, "r", encoding="utf-8") as f:
         text = f.read()
@@ -91,7 +88,6 @@ def get_gender_data(names_list, api_key, batch_size=100, pause=1):
 
     return pd.DataFrame(expanded_results)
 
-#%%  
 speakers = extract_quoted_names(text_path, quote_verbs)
 df_gender = get_gender_data(speakers, API_KEY)
 gender_counts = df_gender['gender'].value_counts()
@@ -109,5 +105,3 @@ print(len(speakers))
 print("Gender stats:")
 print(df_summary_quoted_names)
 
-
-# %%
