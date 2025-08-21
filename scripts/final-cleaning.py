@@ -1,7 +1,6 @@
 import pandas as pd
 
-#%%
-excel_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/stats/english-stats/quoted/old/quoted-names-gender-tech.xlsx"
+excel_path = ""
 df = pd.read_excel(excel_path)
 
 ## DELETE ROWS WITH NO NAMES ##
@@ -71,7 +70,3 @@ with open(output_path, "w", encoding="utf-8") as f:
     f.write("Female to Male Ratio\n")
     f.write(f"{female_to_male_ratio}\n")
 
-
-
-
-# %%
