@@ -1,12 +1,10 @@
-#%%
 import spacy
 import pandas as pd
 import time
 from collections import Counter, defaultdict
 import requests
 
-API_KEY = "6852cfd827f9d5de88a7676a"
-
+API_KEY = ""
 nlp = spacy.load("tr_core_news_trf")
 
 def get_all_names(text_path):
@@ -78,9 +76,8 @@ def get_gender_data(names_list, api_key, batch_size=100, pause=1):
 
     return pd.DataFrame(expanded_results)
 
-#%%
 # Path to your Excel file
-file_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/stats/turkish-stats/all-mentions/all-mentions-turkish-tech.xlsx"
+file_path = ""
 
 # Load Excel file into a DataFrame
 df = pd.read_excel(file_path)
@@ -111,4 +108,3 @@ df_summary_first_hundred = pd.DataFrame({
 df_combined.to_excel("top_100_gender_stats-tech.xlsx", index=False)
 print("The gender ratio of top 100 popular people:")
 print(df_summary_first_hundred)
-# %%
