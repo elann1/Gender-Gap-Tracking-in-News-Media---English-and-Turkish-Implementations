@@ -1,7 +1,7 @@
 import os
 
 # Set the folder path and output file name
-folder_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/corpora/bbc/tech" 
+folder_path = "" 
 output_path = "merged_articles_tech.txt"
 
 # Get the first 380 .txt files (sorted for consistency)
@@ -27,7 +27,7 @@ print(f"Merged {len(articles)} articles into '{output_path}'")
 
 
 
-#%% Added this cell later to clean "'s" occurences. Should normally be in the for loop above
+#%% cell to clean "'s" occurences
 # Set the file path
 file_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/merged_articles_tech.txt"  
 
@@ -45,7 +45,7 @@ with open(file_path, "w", encoding="utf-8") as f:
 print("All occurrences of `'s` have been removed.")
 
 
-# %% Added this cell to truncate the 2 sections: politics and tech to 1000000 characters for the NER limit
+# %% cell to truncate the 2 sections: politics and tech to 1000000 characters for the NER limit
 # Path to your .txt file
 file_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/merged_articles_tech.txt"  
 
@@ -65,4 +65,3 @@ with open(file_path, "w", encoding="utf-8") as f:
 
 print(f"Truncated the file to {char_limit} characters.")
 
-# %%
