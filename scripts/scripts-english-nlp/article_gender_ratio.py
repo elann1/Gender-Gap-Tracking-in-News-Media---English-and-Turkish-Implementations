@@ -1,19 +1,16 @@
-#%%
 import spacy
 import pandas as pd
 import time
 from collections import Counter
 import requests
 
-#%%
-API_KEY = "6852cfd827f9d5de88a7676a"
-TEXT_PATH = "C:/Users/Ilsu/Desktop/School/Thesis/Project/merged_articles_tech.txt"
+API_KEY = ""
+TEXT_PATH = ""
 nlp = spacy.load("en_core_web_sm")
 
 with open(TEXT_PATH, "r", encoding="utf-8") as f:
         text = f.read()
 
-#%%
 def get_gender_data(names_list, api_key, batch_size=100, pause=1):
     name_counts = Counter(names_list)
     unique_names = list(name_counts.keys())
@@ -55,7 +52,6 @@ def get_gender_data(names_list, api_key, batch_size=100, pause=1):
 
     return pd.DataFrame(expanded_results)
 
-#%%
 articles = [a.strip() for a in text.split("\n\n") if a.strip()]
 
 article_data = []  # to store data for each article
@@ -116,5 +112,3 @@ print(df_article_stats.head())
 print("Summary statistics:")
 print(df_summary_stats)
 
-
-# %%
