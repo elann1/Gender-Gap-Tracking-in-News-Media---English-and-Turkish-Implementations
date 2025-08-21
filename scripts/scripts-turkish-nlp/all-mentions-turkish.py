@@ -1,14 +1,11 @@
-#%%
 import pandas as pd
 import spacy, spacy_transformers
 import requests
 import time
 from collections import Counter
 nlp = spacy.load("tr_core_news_lg")
-API_KEY = "6852cfd827f9d5de88a7676a"
+API_KEY = ""
 
-
-#%%
 def get_all_names(text_path):
     with open(text_path, "r", encoding="utf-8") as f:
         text = f.read()
@@ -85,9 +82,8 @@ def save_excel(df, section):
     print("Gender stats:")
     print(df_summary)
 
-#%%
-TEXT_PATH = "C:/Users/Ilsu/Desktop/School/Thesis/Project/corpora/milliyet/subcorpora/milliyet_tech.txt"
+TEXT_PATH = ""
 names_list = get_all_names(TEXT_PATH)
 all_mentions_df = get_gender_data(names_list, API_KEY)
 save_excel(all_mentions_df, "tech")
-# %%
+
