@@ -7,8 +7,8 @@ from collections import Counter
 import openpyxl
 
 #%%
-API_KEY = "6852cfd827f9d5de88a7676a"
-TEXT_PATH = "C:/Users/Ilsu/Desktop/School/Thesis/Project/merged_articles_politics.txt"
+API_KEY = ""
+TEXT_PATH = ""
 nlp = spacy.load("en_core_web_sm")
 
 #%%
@@ -61,7 +61,6 @@ def get_gender_data(names_list, api_key, batch_size=100, pause=1):
 
     return pd.DataFrame(expanded_results)
 
-#%%
 names_list = get_all_names(TEXT_PATH)
 df_gender = get_gender_data(names_list, API_KEY)
 gender_counts = df_gender['gender'].value_counts()
@@ -78,4 +77,5 @@ print("Number of names found:")
 print(len(names_list))
 print("Gender stats:")
 print(df_summary_all_mentions)
+
 
