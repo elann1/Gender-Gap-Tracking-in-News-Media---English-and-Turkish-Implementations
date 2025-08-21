@@ -1,4 +1,3 @@
-#%%
 import pandas as pd
 import spacy, spacy_transformers
 import requests
@@ -7,9 +6,7 @@ from collections import Counter
 
 
 nlp = spacy.load("tr_core_news_lg")
-API_KEY = "6852cfd827f9d5de88a7676a"
-
-#%%
+API_KEY = ""
 
 def get_gender_data(names_list, api_key, batch_size=100, pause=1):
     name_counts = Counter(names_list)
@@ -52,8 +49,8 @@ def get_gender_data(names_list, api_key, batch_size=100, pause=1):
 
     return pd.DataFrame(expanded_results)
 
-#%%
-TEXT_PATH = "C:/Users/Ilsu/Desktop/School/Thesis/Project/corpora/milliyet/subcorpora/milliyet_tech.txt"
+
+TEXT_PATH = ""
 
 with open(TEXT_PATH, "r", encoding="utf-8") as f:
         text = f.read()
@@ -118,4 +115,4 @@ print("Per-article gender tagging saved to Excel.")
 print(df_article_stats.head())
 print("Summary statistics:")
 print(df_summary_stats)
-# %%
+
