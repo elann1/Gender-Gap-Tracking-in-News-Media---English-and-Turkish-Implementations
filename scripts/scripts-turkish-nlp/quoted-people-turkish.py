@@ -1,4 +1,3 @@
-#%%
 import spacy
 import pandas as pd
 from collections import Counter
@@ -14,7 +13,7 @@ quote_verbs_adj = ["söyleyen", "diyen", "paylaşan", "özetleyen", "anlatan", "
                    "yazan", "yansıtan", "savunan", "yalanlayan", "cevaplayan", "yanıtlayan", "soran", "tekrarlayan", "ileten", "yayımlayan", "konuşan", "seslenen"]
 
 
-API_KEY = "6852cfd827f9d5de88a7676a"
+API_KEY = ""
 
 nlp = spacy.load("tr_core_news_lg")
 def extract_quoted_names(text_path, quote_verbs_dir_adv, quote_verbs_adj):
@@ -106,13 +105,8 @@ def save_excel(df, section):
     print("Gender stats:")
     print(df_summary)
 
-#%%
-text_path = "C:/Users/Ilsu/Desktop/School/Thesis/Project/corpora/milliyet/subcorpora/milliyet_tech.txt"
+
+text_path = ""
 names_list = extract_quoted_names(text_path, quote_verbs_dir_adv, quote_verbs_adj)
 gendered_df = get_gender_data(names_list, API_KEY)
 save_excel(gendered_df, "tech")
-
-
-
-
-# %%
